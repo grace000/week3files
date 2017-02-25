@@ -1,76 +1,80 @@
 
-<script type="text/javascript">
 
-    window.onload = function () {
+  $(document).ready(function) {
 
-  var letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // This array holds the words that the player will choose from.
+  var words = [
+    'chicago', 
+    'rush', 
+    'lawrence', 
+    'halsted', 
+    'ashland',
+    'jackson',
+    'paulina',
+    'addison',
+    'roscoe',
+    'belmont',
+    'wolcott',
+    'damen',
+    'western',
+    'division',
+    'pulaski',
+    'kedzie',
+    'normal',
+    'racine',
+    'harrison',
+    'lincoln',
+
+    ];
   
-  var guess ;             // Guess
-  var guesses = [ ];      // Stored geusses
-  var guessesLeft ;       // Guesses left
-  var wins ;              // Count correct guesses
-  var losses = [];        // Stored losses
+  var guess ;                       // Guess
+  var previousGuesses = [ ];        // Stored geusses
+  var guessesLeft ;                 // Guesses left
+  var wins ;                        // Count correct guesses
+  var wrongAnswerCount = [];        // Stored losses
 
-    //Pick a random letter
+   // This is how a word will be randomly chosen from the list.
+  var randomWord = words[Math.floor(Math.random() * words.length)];
 
-    var letter = letters[Math.floor(Math.random() * letters.length)];
-
-    // Set up the answer array
-
+    // Empty array to store guesses
     var answerArray = [];
+  
+  //Game Screen
+  function gameScreen(){
+    $('#game-container').empty(); 
+    $('#gameContent').append('<div id="wordHolder"></div>');
+    $('#gameContent').append('<div id="guesses">Previous guesses:</div>');
+    $('#gameContent').append('<div id="feedback"></div>');
 
-    for (var i = 0; i < letter.length; i++) {
+    getWord(); 
+    var numberOfTiles=randomWord.length; 
+    wrongAnswerCount=0; 
+    previousGuesses=[];
 
-      answerArray[i] = "_";
+    for(i=0;i<numberOfTiles;i++){ 
+    $('#wordHolder').append('<div class="tile" id=t'+i+'></div>');
+}
 
+  $(document).on("keyup",handleKeyUp);
+
+  //filling the answer array with under scores.
+  lineSet = function () {
+    
+    randomWord ();
+
+    for (var i = 0; i < randomWord.lenth; i++)
+    {
+        answerArray[i] = "_";
     }
 
     var remainingLetters = letter.length;
 
-    // The game loop
-
-    while (remainingLetters > 0) {
-
-    // Show the player their progress
-
-    alert(answerArray.join(" "));
-
-    // Get a guess from the player
-
-    var guess = prompt("Guess a letter, or click Cancel to stop playing.");
-
-     if (guess.length !== 1) {
-
-        alert("Please enter a single letter.");
-
-      } else {
-
-        // Update the game state with the guess
-
-        for (var j = 0; j < letter.length; j++) {
-
-          if (word[j] === guess) {
-
-            answerArray[j] = guess;
-
-            remainingLetters--;
-
-          }
-
-        }
-
-      }
+    
+       
 
     // The end of the game loop
 
-    }
+    };
 
-    // Show the answer and congratulate the player
+    
 
-    alert(answerArray.join(" "));
-
-    alert("Good job! The letter was " + letter);
-
-</script>

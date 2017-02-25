@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+  <title>Guess That Street!</title>
+
+  <!--Linking reset css get reset code-->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
+
+  <!--Linking assets folder-->
+  <!--<link rel="stylesheet" type="text/css" href="assets/css/styles.css">-->
+</head>
+
+<body onload="startUp()">
+      <div class="main-container">
+        
+          <div class="game-container">
+            <h1>Can you correctly name all of the street names in Chicago?</h1>
+              <div class="win-container">
+              <input id="letter" type="text"></div>
+              <input type="button" value="letter" onClick="Letter()"/>
+
+              <p id="answer"></p>
+              <div class="correct-letters"></div>
+              
+              <div class="missed-letters"></div>
+              <div class="loss-container"></div>
+          </div>
+      </div>
+</body>
+
+<script src="game3.js"></script>
+
+</html>

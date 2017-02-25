@@ -2,49 +2,100 @@ body {
     font-family:sans-serif; 
     font-weight:bold; 
     font-size:16pt;
-}
-}
-/* For the guess boxes. */
-.side-container {
-    margin-top:45px;
-    margin-left:130px;
-    width:170px;
-    text-align:center;
-}
-.container-title {
-    color:#6f5a2d;
-}
-.input-area {
-    width:75px;
-    height:31px;
-    margin:auto;
-    padding:3pt;
-    border: 1px #6f5a2d solid;
-    -moz-border-radius:15px;
-    -webkit-border-radius:15px;
-    border-radius:15px;
-    background:#ebe2ce;
-}
-#letter-input {
-    border:1px #6f5a2d solid;
-    width:20pt;
-    font-size:14pt;
-    text-align:center;
-}
-.guessed-letter {
-    color:#792c15;
-}
-/* Word Box */
-.word-box {
-    width:250px;
-    margin:auto;
-    margin-top:25px;
-    text-align:center;
+    max-height: 600px;
+    
 }
 
-.shown-letter {
-    border-bottom: 3px #000 solid;
-    padding: 0 2px;
-    margin: 0 2px;
-    color:#1c2025;
+/* background picture area */
+.main-container {   
+    margin-top: 50px;
+    width:100%;
+    height: 500px;
+    z-index: -30px;
+    clear: both;
+    /**background-image: url("file:///Users/tiffanielmore/Desktop/week3files/assets/images/chicago.jpg");
+    background-repeat: no-repeat;**/
 }
+
+img {
+    position: absolute;
+    width:100%;
+    height: 500px;
+}
+
+/****** Game stage *******/
+
+
+#game-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    width: 900px;
+    height: 400px;
+    background-color: #f0f0f0;
+    opacity: 0.3;
+    position: absolute;
+    left: 15px;
+}
+
+h1 {
+    text-align: center;
+    z-index: 30px;
+
+}
+.button {
+    font-size:17px; 
+    width:100px; 
+    margin:auto; 
+    margin-top:20px; 
+    cursor:pointer; 
+    border:solid 1px white; 
+    border-radius:4px; 
+    text-align:center; 
+    color:#fff;
+}
+
+.button:hover { 
+    background-color:#6AB0FD;
+}
+
+#wordHolder { 
+    margin-top:50px; 
+    margin-left:150px; 
+} 
+
+#guesses { 
+    margin-top:20px; 
+    margin-left:150px; 
+} 
+
+ #feedback { 
+    margin-top:20px; 
+    margin-left:150px; 
+    font-size:34px; 
+    color:#fff; 
+} 
+    
+
+.tile {     
+    height:40px; 
+    width:40px; 
+    float:left; 
+    margin-right:10px; 
+    background-color:white; 
+    text-align:center; 
+    font-size:24px; 
+    color:#333; 
+    padding-top:5px; 
+}
+
+#finalMessage {  
+    text-align:center; 
+    font-size:40px; 
+    color:#fff; 
+    width:90%; 
+    margin:auto; 
+    margin-top:100px;
+} 
+
+

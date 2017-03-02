@@ -26,7 +26,7 @@ img {
 /****** Game stage *******/
 
 
-#game-container {
+#gameContainer {
     margin-top: 50px;
     margin-bottom: 50px;
     margin-left: 50px;
@@ -38,64 +38,15 @@ img {
     left: 15px;
 }
 
-h1 {
+h1,
+h2 {
     text-align: center;
     z-index: 30px;
+    color: red;
+    height: 200px;
 
 }
-.button {
-    font-size:17px; 
-    width:100px; 
-    margin:auto; 
-    margin-top:20px; 
-    cursor:pointer; 
-    border:solid 1px white; 
-    border-radius:4px; 
-    text-align:center; 
-    color:#fff;
-}
 
-.button:hover { 
-    background-color:#6AB0FD;
-}
 
-#wordHolder { 
-    margin-top:50px; 
-    margin-left:150px; 
-} 
-
-#guesses { 
-    margin-top:20px; 
-    margin-left:150px; 
-} 
-
- #feedback { 
-    margin-top:20px; 
-    margin-left:150px; 
-    font-size:34px; 
-    color:#fff; 
-} 
-    
-
-.tile {     
-    height:40px; 
-    width:40px; 
-    float:left; 
-    margin-right:10px; 
-    background-color:white; 
-    text-align:center; 
-    font-size:24px; 
-    color:#333; 
-    padding-top:5px; 
-}
-
-#finalMessage {  
-    text-align:center; 
-    font-size:40px; 
-    color:#fff; 
-    width:90%; 
-    margin:auto; 
-    margin-top:100px;
-} 
 
 

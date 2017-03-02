@@ -76,7 +76,50 @@ updateSelectWord();
 updateGuessesRemaining();
 
 
+//below function will insert letters into our game upon a keypress
+document.onkeyup = function(event) {
     
+    var letter = String.fromCharCode(event.keyCode).toLowerCase();
+    var letterCorrect = false;
+    var alreadyGuessed = false;
+    
+    //if letter guessed is in the word being guessed
+    for (var i = 0; i < selectWord.length; i++) {
+        if (selectWord[i] === letter) {
+            answerArray[i] = letter;
+            document.getElementById("selectWord").innerHTML = answerArray.join(" ");
+            letterCorrect = true;
+        }
+    }
+    
+    //if letter guessed is not in the word being guessed
+    if (!letterCorrect) {
+        for (var j = 0; j < wrongGuess.length; j++) {
+            if (letter === wrongGuess[j]) {
+                alreadyGuessed = true;
+            }
+        }
+        if (!alreadyGuessed) {
+            lives--;
+            wrongGuess.push(letter);
+            document.getElementById("wrongGuess").innerHTML = wrongGuess.join(", ");
+            var guessesRemaining = "<h3>Guesses Remaining: " + lives + "</h3>";
+            document.querySelector("#guessesRemaining").innerHTML = guessesRemaining;
+        }
+    }
+    // if lives remining goes down to 0 (too many wrong guesses), the game resets and increases our loss count
+    if (lives === 0) {
+        losses++;
+        document.querySelector('#losses').innerHTML = losses;
+        reset();
+    }
+    // if the player guesses all letters in the word being guessed, the game resets and increases our win count
+    if (!answerArray.includes("_")) {
+        wins++;
+        document.querySelector('#wins').innerHTML = wins;
+        reset();
+    }
+}
        
 
  

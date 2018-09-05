@@ -7,43 +7,56 @@
   <!--Linking reset css get reset code-->
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
 
-  <!--Linking assets folder-->
-  <link rel="stylesheet" type="text/css" href="assets/css/styles.css"> 
-
   <!--Linking google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Roboto" rel="stylesheet">
+
+  <!--Linking custom stylesheet-->
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
 </head>
 
 <body>
-      <div class="main-container">
 
-        <img src="assets/images/chicago.jpg" alt="Chicago"> 
-        <div class="topbar">
-        <h1>Can you correctly name all of the streets in Chicago?</h1>
-        </div>
-          <div id="gameContainer">
-            
-            <br>
+<div class="container">
 
-          </div>
-            
-            <h2>Current Word</h2>
-            
-            <div id="selectWord"></div><!--blank div to be filled by javascript-->
-            
-            <h2>Wrong Letters</h2>
-              
-            <div id="wrongGuess"></div>
-            
-            <div id="guessesRemaining"></div>
+  <div class="item1">
+    <h1>Guess That Chicago Street!</h1>
+  </div>
+  
+  <div class="item2">
+    <h3>Name of Street to Guess</h3>
+    <p>Press a letter to get started</p>
+    <p id="wordToGuess"></p>
+  </div>
+  
+  <div class="item3">
+    <h2>Wrong Guesses:</h2> 
+    <p><span id="wrongGuess"></span></p>
+  </div>
 
-            <div id="wins"></div>
-            
-            <div id="losses"></div>
-      </div>
+  <div class="item4">
+   <h2>Guesses Left:</h2>
+   <p><span id="guessesRemaining"></span></p>
+  </div>
 
-      <script src="assets/javascript.js/game.js"></script>
+  <div class="item5">
+    <h2>Win Counter:</h2>
+    <p><span id="winCounter"></span></p>
+  </div>
+
+  <div class="item6">
+    <h2>Loss Counter:</h2>
+    <p><span id="lossCounter"></span></p>
+  </div>
+
+</div>  
+
+  <script src="assets/src/game.js"></script>
 </body>
 
 </html>
